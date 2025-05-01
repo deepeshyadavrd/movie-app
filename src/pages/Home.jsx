@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
 import ImageSlider from '../components/ImageSlider';
-// import CategoryList from '../components/CategoryList';
+import CategoryList from '../components/CategoryList';
 
 const movies = [
   { id: 1, title: "Inception", year: 2010 },
@@ -16,7 +16,7 @@ export default function Home() {
     <Navbar />
     <ImageSlider />
     <SearchBar />
-    {/* <CategoryList /> */}
+    <CategoryList />
     <div>
       <h1>Movie List</h1>
       {movies.map(movie => (

@@ -1,30 +1,29 @@
-import React from 'react';
-import Slider from 'react-slick';
+import React, { useState } from 'react';
+import './ImageSlider.css';
+
+const images = [
+  '/images/slide1.jpg',
+  '/images/slide2.jpg',
+  '/images/slide3.jpg',
+];
 
 const ImageSlider = () => {
-  const images = [
-    '/images/slide1.jpg',
-    '/images/slide2.jpg',
-    '/images/slide3.jpg'
-  ];
+  const [current, setCurrent] = useState(0);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
-    <Slider {...settings}>
-      {images.map((img, idx) => (
-        <div key={idx}>
-          <img src={img} alt={`slide-${idx}`} style={{ width: '100%', height: '400px', objectFit: 'cover' }} />
-        </div>
-      ))}
-    </Slider>
+    <div className="slider">
+      <button className="nav left" onClick={prevSlide}>&lt;</button>
+      <img src={images[current]} alt="Slide" />
+      <button className="nav right" onClick={nextSlide}>&gt;</button>
+    </div>
   );
 };
 
