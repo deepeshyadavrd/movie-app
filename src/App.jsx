@@ -1,14 +1,29 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import MovieDetails from './pages/MovieDetails';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import MovieSlider from './pages/Home'; // assuming you made a slider
+import MovieList from './pages/MovieDetails';     // for displaying movies
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Mock movie data
+  const movies = [
+    { title: 'Inception', image: '/images/inception.jpg' },
+    { title: 'Interstellar', image: '/images/interstellar.jpg' },
+    { title: 'Dunkirk', image: '/images/dunkirk.jpg' }
+  ];
+
+  // Filter by search
+  const filteredMovies = movies.filter(movie =>
+    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/movie/:id" element={<MovieDetails />} />
-    </Routes>
+    <div>
+      <Header onSearch={setSearchTerm} />
+      <MovieSlider movies={movies} />
+      <MovieList movies={filteredMovies} />
+    </div>
   );
 }
 

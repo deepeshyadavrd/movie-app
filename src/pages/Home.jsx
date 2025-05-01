@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import SearchBar from '../components/SearchBar';
+// import Navbar from '../components/Navbar';
+// import SearchBar from '../components/SearchBar';
 import ImageSlider from '../components/ImageSlider';
 import CategoryList from '../components/CategoryList';
 
@@ -13,9 +13,9 @@ const movies = [
 export default function Home() {
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
     <ImageSlider />
-    <SearchBar />
+    {/* <SearchBar /> */}
     <CategoryList />
     <div>
       <h1>Movie List</h1>
