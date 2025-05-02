@@ -42,3 +42,24 @@
 .read-the-docs {
   color: #888;
 }
+
+.search-overlay {
+  position: fixed;
+  top: 70px; /* adjust based on your header height */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  background: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.search-overlay .search-result {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: auto;
+}

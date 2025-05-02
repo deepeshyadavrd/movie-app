@@ -1,25 +1,37 @@
-// src/components/Header.js
 import React from 'react';
-import './Header.css';
 
-const Header = ({ onSearch }) => {
+const Header = ({ searchQuery, setSearchQuery }) => {
   return (
-    <header className="main-header">
-      <div className="logo">🎬 Movie Explorer</div>
-      <nav className="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Categories</a>
-        <a href="#">Top Rated</a>
-      </nav>
-      <div className="search-box">
-        <input
-          type="text"
-          placeholder="Search movies..."
-          onChange={(e) => onSearch(e.target.value)}
-        />
-      </div>
+    <header style={styles.header}>
+      <h1 style={styles.logo}>🎬 MovieApp</h1>
+      <input
+        type="text"
+        placeholder="Search movies..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        style={styles.input}
+      />
     </header>
   );
+};
+
+const styles = {
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px 20px',
+    backgroundColor: '#222',
+    color: '#fff',
+  },
+  logo: { margin: 0 },
+  input: {
+    padding: '8px',
+    fontSize: '16px',
+    width: '250px',
+    borderRadius: '4px',
+    border: 'none',
+  },
 };
 
 export default Header;

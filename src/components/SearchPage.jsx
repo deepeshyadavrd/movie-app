@@ -6,35 +6,45 @@ const movieData = [
   { title: 'Minecraft', image: '/images/slide1.jpg', rating: 7.9 },
 ];
 
-const SearchPage = () => {
-  const [query, setQuery] = useState('');
-
-  const filteredMovies = movieData.filter(movie =>
+const SearchPage = ({ query }) => {
+  const filteredMovies = movieData.filter((movie) =>
     movie.title.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
-    <div className="search-page">
-      <h2>Search Movies</h2>
-      <input
-        type="text"
-        placeholder="Type movie name..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-
-      <div className="movie-results">
-        {filteredMovies.map((movie, index) => (
-          <div className="movie-card" key={index}>
-            <img src={movie.image} alt={movie.title} />
-            <h3>{movie.title}</h3>
-            <p>⭐ {movie.rating}</p>
-          </div>
-        ))}
-        {filteredMovies.length === 0 && <p>No movies found.</p>}
+    <div style={{ padding: '20px' }}>
+      <h2>Search Results for "{query}"</h2>
+      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+        {filteredMovies.length > 0 ? (
+          filteredMovies.map((movie, idx) => (
+            <div key={idx} style={styles.card}>
+              <img src={movie.image} alt={movie.title} style={styles.image} />
+              <h3>{movie.title}</h3>
+              <p>⭐ {movie.rating}</p>
+            </div>
+          ))
+        ) : (
+          <p>No results found.</p>
+        )}
       </div>
     </div>
   );
+};
+
+const styles = {
+  card: {
+    width: '200px',
+    padding: '10px',
+    backgroundColor: '#f1f1f1',
+    borderRadius: '8px',
+    textAlign: 'center',
+  },
+  image: {
+    width: '100%',
+    height: '280px',
+    objectFit: 'cover',
+    borderRadius: '6px',
+  },
 };
 
 export default SearchPage;
