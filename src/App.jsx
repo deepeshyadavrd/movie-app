@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import MovieSlider from './pages/Home'; // assuming you made a slider
-import MovieList from './pages/MovieDetails';     // for displaying movies
+import MovieSlider from './pages/Home';
+import MovieList from './pages/MovieDetails';
+import SearchPage from './components/SearchPage';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
