@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import MovieSlider from './pages/Home';
-import MovieList from './pages/MovieDetails';
-import SearchPage from './components/SearchPage';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +21,6 @@ function App() {
     <div>
       <Header onSearch={setSearchTerm} />
       <MovieSlider movies={movies} />
-      <MovieList movies={filteredMovies} />
     </div>
   );
 }

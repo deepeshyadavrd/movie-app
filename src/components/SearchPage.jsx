@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 const movieData = [
-  { title: 'Inception', image: '/images/inception.jpg', rating: 8.8 },
-  { title: 'Interstellar', image: '/images/interstellar.jpg', rating: 8.6 },
-  { title: 'Dunkirk', image: '/images/dunkirk.jpg', rating: 7.9 },
+  { title: 'Inception', image: '/images/slide2.jpg', rating: 8.8 },
+  { title: 'Interstellar', image: '/images/slide3.jpg', rating: 8.6 },
+  { title: 'Minecraft', image: '/images/slide1.jpg', rating: 7.9 },
 ];
 
 const SearchPage = () => {
