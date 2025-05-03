@@ -31,6 +31,7 @@ const SearchPage = ({ query }) => {
   );
 };
 
+
 const styles = {
   card: {
     width: '200px',
