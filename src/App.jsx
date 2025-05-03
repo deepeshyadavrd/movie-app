@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import MovieSlider from './pages/Home';
 import SearchPage from './components/SearchPage';
+import './App.css';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');

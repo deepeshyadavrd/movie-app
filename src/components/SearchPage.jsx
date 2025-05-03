@@ -12,12 +12,12 @@ const SearchPage = ({ query }) => {
   );
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="search-result" style={{ padding: '20px' }}>
       <h2>Search Results for "{query}"</h2>
-      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+      <div className="movie-list" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
         {filteredMovies.length > 0 ? (
           filteredMovies.map((movie, idx) => (
-            <div key={idx} style={styles.card}>
+            <div className="movie-card" key={idx} style={styles.card}>
               <img src={movie.image} alt={movie.title} style={styles.image} />
               <h3>{movie.title}</h3>
               <p>⭐ {movie.rating}</p>
