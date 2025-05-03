@@ -6,9 +6,7 @@ import CategoryList from '../components/CategoryList';
 export default function Home() {
   return (
     <>
-    {/* <Navbar /> */}
     <ImageSlider />
-    {/* <SearchBar /> */}
     <CategoryList />
   
     </>

@@ -33,6 +33,7 @@ const Header = ({ searchQuery, setSearchQuery }) => {
   );
 };
 
+
 const styles = {
   header: {
     display: 'flex',
